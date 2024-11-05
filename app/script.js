@@ -31,7 +31,7 @@ function displayEmailsInList(emails) {
 
     emails.forEach(el => {
         const emailItem = document.createElement('li')
-        emailItem.textContent = emails
+        emailItem.textContent = el
         listContainer.appendChild(emailItem)
     })
 }
