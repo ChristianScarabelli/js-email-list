@@ -27,14 +27,20 @@ function generateRandomEmails() {
 
 function displayEmailsInList(emails) {
     const listContainer = document.getElementById('email_list_container')
-    listContainer.innerHTML = ''  // svuoto la lista
+    listContainer.innerHTML = '' // Svuoto la lista
+
+    const listUlContainer = document.createElement('ul')   // creo l'ul
+    listUlContainer.classList.add('list-group')
+    listContainer.appendChild(listUlContainer)   // appendo l'ul al contenitore
 
     emails.forEach(el => {
-        const emailItem = document.createElement('li')
-        emailItem.textContent = el
-        listContainer.appendChild(emailItem)
+        const emailItem = document.createElement('li')  // creo gli li
+        emailItem.textContent = el    // il testo degli li corrisponde all'elemento, cioè la mail
+        emailItem.classList.add('list-group-item')
+        listUlContainer.appendChild(emailItem) // Aggiungi l'elemento <li> all'elemento <ul>
     })
 }
+
 
 // chiamo la funzione
 generateRandomEmails()
