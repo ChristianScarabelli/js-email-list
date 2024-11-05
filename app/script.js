@@ -41,6 +41,12 @@ function displayEmailsInList(emails) {
     })
 }
 
-
 // chiamo la funzione
 generateRandomEmails()
+
+
+// richiamo il bottone dal dom
+const emailListButtonReset = document.getElementById('reset_mail_list')
+
+// aggiungo l'evento al bottone
+emailListButtonReset.addEventListener('click', generateRandomEmails)  // al click chiamo la funzione principale, l'unica richiamata e che scatena l'altra
